@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Responsive Tiled Photo Gallery</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css?family=Nova+Script" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  <style type="text/css">
+
+  body {
+   margin: 0;
+   padding: 0;
+   background: #EEE;
+   /*font: 10px/13px 'Lucida Sans',sans-serif;*/
+}
+.wrap {
+   overflow: hidden;
+   margin: 10px;
+}
+.box {
+   float: left;
+   position: relative;
+   width: 20%;
+   padding-bottom: 20%;
+}
+.boxInner {
+   position: absolute;
+   left: 10px;
+   right: 10px;
+   top: 10px;
+   bottom: 10px;
+   overflow: hidden;
+}
+.boxInner img {
+   width: 100%;
+}
+.boxInner .titleBox {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin-bottom: -50px;
+   background: #000;
+   background: rgba(0, 0, 0, 0.5);
+   color: #FFF;
+   padding: 10px;
+   text-align: center;
+   -webkit-transition: all 0.3s ease-out;
+   -moz-transition: all 0.3s ease-out;
+   -o-transition: all 0.3s ease-out;
+   transition: all 0.3s ease-out;
+}
+
+/*additional css*/
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #D9BD50;
+}
+
+.boxInner:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 25px;
+  font-family: 'Nova Script', cursive;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/****************/
+
+body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleBox {
+   margin-bottom: 0;
+}
+@media only screen and (max-width : 480px) {
+   /* Smartphone view: 1 tile */
+   .box {
+      width: 100%;
+      padding-bottom: 100%;
+   }
+}
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+   /* Tablet view: 2 tiles */
+   .box {
+      width: 50%;
+      padding-bottom: 50%;
+   }
+}
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+   /* Small desktop / ipad view: 3 tiles */
+   .box {
+      width: 33.3%;
+      padding-bottom: 33.3%;
+   }
+}
+@media only screen and (max-width : 1290px) and (min-width : 1051px) {
+   /* Medium desktop: 4 tiles */
+   .box {
+      width: 25%;
+      padding-bottom: 25%;
+   }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <!-- Define all of the tiles: -->
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img1.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Persepolis" style="text-decoration:none" target="_blank">Persepolis</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img2.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Yazd_Atash_Behram" style="text-decoration:none" target="_blank">Yazd Atash Behram</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img3.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Taq_Bostan" style="text-decoration:none" target="_blank">Taq Bostan</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img4.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Vank_Cathedral" style="text-decoration:none" target="_blank">Vank Cathedral</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img5.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Behistun_Inscription" style="text-decoration:none" target="_blank">Behistun Inscription</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img6.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Arg_e_Bam" style="text-decoration:none" target="_blank">Arg-e-Bam</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img7.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Sheikh_Lotfollah_Mosque" style="text-decoration:none" target="_blank">Sheikh Lotfollah Mosque</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img8.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Golestan_Palace" style="text-decoration:none" target="_blank">Golestan Palace</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img9.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Qanat" style="text-decoration:none" target="_blank">Persian Qanat</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img10.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Windcatcher" style="text-decoration:none" target="_blank">Windtowers</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img11.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Ali-Sadr_Cave" style="text-decoration:none" target="_blank">Ali-Sadr Cave</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img12.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Tab%C4%81tab%C4%81ei_House" style="text-decoration:none" target="_blank">Tabātabāei House</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img13.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Bazaar_of_Tabriz" style="text-decoration:none" target="_blank">Grand Bazaar of Tabriz</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img14.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Eram_Garden" style="text-decoration:none" target="_blank">Eram Garden</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="boxInner">
+        <img src="imgs/img15.jpg" alt="Description of image" class="image">
+
+        <div class="overlay">
+          <div class="text">
+            <!-- Link to image wiki page, remove link underline, target=_blank opens wiki as new tab-->
+            <a href="https://en.wikipedia.org/wiki/Caravanserai" style="text-decoration:none" target="_blank">Persian Caravanserai</a></div>
+        </div>
+
+        <div class="titleBox">Butterfly</div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /#wrap -->
+
+</body>
+</html>
